@@ -9,7 +9,7 @@ if (isset($_SESSION['user_id'])) {
 require 'database.php';
 
 if(!empty($_POST['email'])&&!empty($_POST['password'])){
- $records= $conn -> prepare ('SELECT id, email, password FROM php_login_database WHERE email=:email ' );
+ $records= $conn -> prepare ('SELECT id, email, password FROM php_login_database WHERE email=:email');
  $records->bindParam(':email',$_POST['email']);
  $records->execute();
  $results = $records ->fetch(PDO::FETCH_ASSOC);
@@ -17,12 +17,13 @@ if(!empty($_POST['email'])&&!empty($_POST['password'])){
 
  $message = '';
 
- if (count($results) > 0 && password_verify($_POST['password'],$results['password'])){
+if (count($results) > 0 && !password_verify($_POST['password'],$results['password'])){
 
     $_SESSION['user_id']= $results['id'];
     header ('Location: /BDD');
 
- } else {
+ } 
+ else {
     $message= 'Les dades no coincideixen';
  }
 

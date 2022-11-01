@@ -46,12 +46,14 @@
        
         <a href="logout.php" style="text-align:center; display:block;text-decoration:underline;
     color: #333;">Logout</a>
+    
+
     <div class="curriculum" style="margin-top:20px;"> 
-        <?php require 'assets/curriculum/curriculum.html' ?>
+        <?php require 'curriculum.php' ?>
     <div>
     <?php else: ?>
 
-        <h1>Siusplau Entreu o Registreu-vos</h1>
+        <h1>Benvinguts</h1>
         <a href= "login.php" alt='login'>Login</a> or
         <a href="signup.php" alt='signup'>Signup</a>
     <?php endif; ?>

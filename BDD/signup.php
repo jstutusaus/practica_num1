@@ -25,7 +25,8 @@ if (!empty($_POST['email']) && !empty($_POST['password'])&& !empty($_POST['name'
     if ($stmt -> execute()){
         $message ='Usuari creat correctament';
 
-    }else{
+    }
+    else{
         $message ='Hi ha hagut un error';
     }
 
